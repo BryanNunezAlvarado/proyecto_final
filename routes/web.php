@@ -20,3 +20,10 @@ Route::get('/', function () {
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
+
+Route::get('bienvenida',function(){
+    return view('bienvenida');
+});
+Route::get('contacto',function(){
+    return view('contacto');
+});
