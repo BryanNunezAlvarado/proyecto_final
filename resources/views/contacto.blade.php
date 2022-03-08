@@ -1,4 +1,11 @@
 <x-layout>
+    <div class="banner-top">
+        <div class="container">
+            <h3 >Contacto</h3>
+            <h4><a href="inicio">Inicio</a><label>/</label>Contacto</h4>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
 <div class="contact">
 	<div class="container">
 		<div class="spec ">

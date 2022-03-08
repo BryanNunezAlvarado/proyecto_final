@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\ProductosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +23,26 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('bienvenida',function(){
+Route::get('/bienvenida',function(){
     return view('bienvenida');
 });
-Route::get('contacto',function(){
+Route::get('/contacto',function(){
     return view('contacto');
 });
+Route::get('/inicio',function(){
+    return view('inicio');
+});
+
+
+//Route::get('/productos/editar/{producto}',function($producto = null){
+    //return view('inicio');
+//});
+
+
+Route::resource('/productos',ProductosController::class);
+
+
+//Route::get('/productos',[ProductosController::class,'index']);
+//Route::get('/productos/agregar',[ProductosController::class,'create']);
+//Route::post('/productos/store',[ProductosController::class,'store']);
+//Route::get('/productos/editar/{numero}',[ProductosController::class,'edit']);
