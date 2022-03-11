@@ -21,6 +21,8 @@ Route::get('/', function () {
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
+    //$producto = DB::table('productos')->get();
+    //return view('inicio',compact('producto'));
 })->name('dashboard');
 
 Route::get('/bienvenida',function(){
@@ -30,7 +32,8 @@ Route::get('/contacto',function(){
     return view('contacto');
 });
 Route::get('/inicio',function(){
-    return view('inicio');
+    $producto = DB::table('productos')->get();
+    return view('inicio',compact('producto'));
 });
 
 

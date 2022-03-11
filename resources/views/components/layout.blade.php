@@ -72,8 +72,14 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
                 <div class="head-t">
                     <ul class="card">
                         
-                        <li><a href="login" ><i class="fa fa-user" aria-hidden="true"></i>Login</a></li>
-                        <li><a href="register" ><i class="fa fa-arrow-right" aria-hidden="true"></i>Registro</a></li>
+                      <form method="POST" class="fa fa-sign-out" aria-hidden="true" action="{{ route('logout') }}" x-data>
+                                @csrf
+
+                                <x-jet-dropdown-link href="{{ route('logout') }}"
+                                         @click.prevent="$root.submit();">
+                                    {{ __('Log Out') }}
+                                </x-jet-dropdown-link>
+                      </form>
                         
                     </ul>		
                 </div>
@@ -104,9 +110,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
                             <ul class="nav navbar-nav ">
                                 <li ><a href="/inicio" class="hyper "><span>Inicio</span></a></li>	                        
                                 <li><a href="/contacto" class="hyper"><span>Contacto</span></a></li>
-                                <li><a href="/bienvenida" class="hyper"><span>Bienvenida</span></a></li>
-                                <li><a href="productos" class="hyper"><span>Productos</span></a></li>
-                                <li><a href="productos/agregar" class="hyper"><span>Agregar Producto</span></a></li>
+                                <li><a href="../productos" class="hyper"><span>Productos</span></a></li>
+                                <li><a href="../productos/create" class="hyper"><span>Agregar Producto</span></a></li>
+                                
                                 <!--<li><a href="edit" class="hyper"><span>Editar Producto</span></a></li>-->
                             </ul>
                         </div>

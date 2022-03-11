@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class ProductosController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     /**
      * Display a listing of the resource.
      *
@@ -17,6 +22,8 @@ class ProductosController extends Controller
         $producto = Productos::get();
     return view('productos.productos',compact('producto'));
     }
+
+    
 
     /**
      * Show the form for creating a new resource.
@@ -61,7 +68,7 @@ class ProductosController extends Controller
     public function show(Productos $producto)
     {
         return view('productos.showproductos',compact('producto'));
-        return redirect('/productos');
+        
         
     }
 
@@ -73,7 +80,7 @@ class ProductosController extends Controller
      */
     public function edit(Productos $producto)
     {
-        //dd($producto);
+        return view('productos.agregar_producto',compact('producto'));
        
         
     }
@@ -85,9 +92,22 @@ class ProductosController extends Controller
      * @param  \App\Models\Productos  $productos
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Productos $productos)
+    public function update(Request $request, Productos $producto)
     {
-        //
+        $request->validate([
+            'nombre'=>'required',
+            'precio'=>'required',
+            'url'=>'required',
+            'tipo'=>'required',
+        ]);
+        
+        $producto->nombre = $request->nombre;
+        $producto->precio = $request->precio;
+        $producto->tipo = $request->tipo;
+        $producto->url = $request->url;
+        $producto->save();
+
+        return redirect('/productos');
     }
 
     /**
@@ -96,8 +116,9 @@ class ProductosController extends Controller
      * @param  \App\Models\Productos  $productos
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Productos $productos)
+    public function destroy(Productos $producto)
     {
-        //
+       $producto->delete();
+       return redirect('/productos');
     }
 }

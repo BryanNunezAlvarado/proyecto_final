@@ -42,7 +42,7 @@ tr:nth-child(even) {
         <td>
         
           <a href="./">Regresar</a>
-          <a href="">Editar</a>
+          
         </td>
         
         
