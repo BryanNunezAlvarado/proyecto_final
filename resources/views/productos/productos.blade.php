@@ -47,7 +47,7 @@ tr:nth-child(even) {
           <form action="productos/{{ $producto->id}}" method="post">
           @csrf
           @method('DELETE')
-          <input type="submit" value="borrar">
+          <input type="submit" value="Borrar">
           </form>
         </td>
         
