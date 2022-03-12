@@ -226,7 +226,7 @@
 									</a>
 									<div class="mid-1">
 										<div class="women">
-											<h6><a href="single.html">Popcorn</a>(250 g)</h6>							
+											<h6><a href="single.html">Palomitas de maiz</a>(250 g)</h6>							
 										</div>
 										<div class="mid-2">
 											<p ><label>$2.00</label><em class="item_price">$1.00</em></p>
@@ -236,7 +236,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="7" data-name="Popcorn" data-summary="summary 7" data-price="1.00" data-quantity="1" data-image="images/of6.png">Añadir al carrito</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="7" data-name="Palomitas de maiz" data-summary="summary 7" data-price="1.00" data-quantity="1" data-image="images/of6.png">Añadir al carrito</button>
 										</div>
 									</div>
 								</div>
@@ -249,7 +249,7 @@
 									</a>
 									<div class="mid-1">
 										<div class="women">
-											<h6><a href="single.html">Nuts</a>(250 g)</h6>							
+											<h6><a href="single.html">Nueces</a>(250 g)</h6>							
 										</div>
 										<div class="mid-2">
 											<p ><label>$4.00</label><em class="item_price">$3.50</em></p>
@@ -259,7 +259,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="8" data-name="Nuts" data-summary="summary 8" data-price="3.50" data-quantity="1" data-image="images/of7.png">Añadir al carrito</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="8" data-name="Nueces" data-summary="summary 8" data-price="3.50" data-quantity="1" data-image="images/of7.png">Añadir al carrito</button>
 										</div>
 									</div>
 								</div>
@@ -300,7 +300,7 @@
 									</a>
 									<div class="mid-1">
 										<div class="women">
-											<h6><a href="single.html">Onion</a>(1 kg)</h6>							
+											<h6><a href="single.html">Cebolla</a>(1 kg)</h6>							
 										</div>
 										<div class="mid-2">
 											<p ><label>$1.00</label><em class="item_price">$0.70</em></p>
@@ -310,7 +310,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="10" data-name="Onion" data-summary="summary 10" data-price="0.70" data-quantity="1" data-image="images/of9.png">Añadir al carrito</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="10" data-name="Cebolla" data-summary="summary 10" data-price="0.70" data-quantity="1" data-image="images/of9.png">Añadir al carrito</button>
 										</div>
 									</div>
 								</div>
@@ -323,7 +323,7 @@
 									</a>
 									<div class="mid-1">
 										<div class="women">
-											<h6><a href="single.html"> Bitter Gourd</a>(1 kg)</h6>							
+											<h6><a href="single.html"> calabaza amarga</a>(1 kg)</h6>							
 										</div>
 										<div class="mid-2">
 											<p ><label>$2.00</label><em class="item_price">$1.00</em></p>
@@ -333,7 +333,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="11" data-name="Bitter Gourd" data-summary="summary 11" data-price="1.00" data-quantity="1" data-image="images/of10.png">Añadir al carrito</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="11" data-name="calabaza amarga" data-summary="summary 11" data-price="1.00" data-quantity="1" data-image="images/of10.png">Añadir al carrito</button>
 										</div>
 									</div>
 								</div>
@@ -346,7 +346,7 @@
 									</a>
 									<div class="mid-1">
 										<div class="women">
-											<h6><a href="single.html">Apples</a>(1 kg)</h6>							
+											<h6><a href="single.html">Manzanas</a>(1 kg)</h6>							
 										</div>
 										<div class="mid-2">
 											<p ><label>$4.00</label><em class="item_price">$3.50</em></p>
@@ -356,7 +356,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="12" data-name="Apples" data-summary="summary 12" data-price="3.50" data-quantity="1" data-image="images/of11.png">Añadir al carrito</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="12" data-name="Manzanas" data-summary="summary 12" data-price="3.50" data-quantity="1" data-image="images/of11.png">Añadir al carrito</button>
 										</div>
 									</div>
 								</div>
@@ -420,7 +420,7 @@
 									</a>
 									<div class="mid-1">
 										<div class="women">
-											<h6><a href="single.html">Oats</a>(1 kg)</h6>							
+											<h6><a href="single.html">Avena</a>(1 kg)</h6>							
 										</div>
 										<div class="mid-2">
 											<p ><label>$4.00</label><em class="item_price">$3.50</em></p>
@@ -430,7 +430,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="15" data-name="Oats" data-summary="summary 15" data-price="3.50" data-quantity="1" data-image="images/of14.png">Añadir al carrito</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="15" data-name="Avena" data-summary="summary 15" data-price="3.50" data-quantity="1" data-image="images/of14.png">Añadir al carrito</button>
 										</div>
 									</div>
 								</div>
@@ -443,7 +443,7 @@
 									</a>
 									<div class="mid-1">
 										<div class="women">
-											<h6><a href="single.html">Bread</a>(500 g)</h6>							
+											<h6><a href="single.html">Pan</a>(500 g)</h6>							
 										</div>
 										<div class="mid-2">
 											<p ><label>$1.00</label><em class="item_price">$0.80</em></p>
@@ -453,7 +453,7 @@
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="16" data-name="Bread" data-summary="summary 16" data-price="0.80" data-quantity="1" data-image="images/of15.png">Añadir al carrito</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="16" data-name="Pan" data-summary="summary 16" data-price="0.80" data-quantity="1" data-image="images/of15.png">Añadir al carrito</button>
 										</div>
 									</div>
 								</div>
