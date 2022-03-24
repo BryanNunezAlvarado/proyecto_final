@@ -28,7 +28,7 @@ tr:nth-child(even) {
    <tr>
        <th>ID</th>
        <th>Usuario</th>
-       <th>Codigo</th>
+       <th>Codigo usuario</th>
        <th>Nombre</th>
        <th>Imagen</th>
        <th>Precio</th>
