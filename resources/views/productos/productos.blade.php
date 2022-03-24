@@ -28,6 +28,7 @@ tr:nth-child(even) {
    <tr>
        <th>ID</th>
        <th>Usuario</th>
+       <th>Codigo</th>
        <th>Nombre</th>
        <th>Imagen</th>
        <th>Precio</th>
@@ -40,6 +41,9 @@ tr:nth-child(even) {
     <tr>
         <td>{{ $producto->id }}</td>
         <td>{{ $producto->user->name }}</td>
+        <td>
+          {{$producto->user->codigo->codigo ?? 'sin codigo'}}
+        </td>
         <td>{{ $producto->nombre }}</td>
         <td><img src="{{asset($producto->url)}}" width = "100" height = "100"> </td>
         <td>{{ $producto->precio }}</td>
@@ -49,6 +53,7 @@ tr:nth-child(even) {
               {{ $etiqueta->etiqueta }} <br>
             @endforeach
         </td>
+        
         <td>
           <a href="productos/{{ $producto->id}}">Ver detalles</a><br>
           <a href="productos/{{ $producto->id}}/edit">Editar</a><br>

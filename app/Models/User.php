@@ -63,4 +63,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Producto::class);
     }
+
+    public function codigo()
+    {
+        return $this->hasOne(Codigo::class);
+    }
 }

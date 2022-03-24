@@ -22,7 +22,8 @@ class ProductosController extends Controller
     public function index()
     {
         //$producto = Producto::get();
-        $producto = Auth::user()->productos;
+        //$producto = Auth::user()->productos;
+        $producto = Producto::with('etiquetas')->with('user.codigo')->get();
        
         return view('productos.productos',compact('producto'));
     }
