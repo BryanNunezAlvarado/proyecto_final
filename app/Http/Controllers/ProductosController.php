@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Productos;
+use App\Models\Etiqueta;
+use App\Models\Producto;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductosController extends Controller
 {
@@ -19,8 +21,10 @@ class ProductosController extends Controller
      */
     public function index()
     {
-        $producto = Productos::get();
-    return view('productos.productos',compact('producto'));
+        //$producto = Producto::get();
+        $producto = Auth::user()->productos;
+       
+        return view('productos.productos',compact('producto'));
     }
 
     
@@ -32,7 +36,8 @@ class ProductosController extends Controller
      */
     public function create()
     {
-        return view('productos.agregar_producto');
+        $etiquetas = Etiqueta::all();
+        return view('productos.agregar_producto',compact('etiquetas'));
     }
 
     /**
@@ -48,13 +53,14 @@ class ProductosController extends Controller
             'precio'=>'required',
             'url'=>'required',
             'tipo'=>'required',
+            'etiqueta_id'=>'required',
         ]);
-        $producto = new Productos();
-        $producto->nombre = $request->nombre;
-        $producto->precio = $request->precio;
-        $producto->tipo = $request->tipo;
-        $producto->url = $request->url;
-        $producto->save();
+        $request->merge(['user_id'=>Auth::id()]);
+        $producto = Producto::create($request->all());
+        $producto->etiquetas()->attach($request->etiqueta_id);
+        
+        //$user = Auth::user();
+        //$user->productos()->save($producto);
 
         return redirect('/productos');
     }
@@ -62,26 +68,26 @@ class ProductosController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Productos  $productos
+     * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function show(Productos $producto)
+    public function show(Producto $producto)
     {
         return view('productos.showproductos',compact('producto'));
         
-        
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Productos  $productos
+     * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function edit(Productos $producto)
+    public function edit(Producto $producto)
     {
-        return view('productos.agregar_producto',compact('producto'));
-       
+        $etiquetas = Etiqueta::all();
+        return view('productos.agregar_producto',compact('producto', 'etiquetas'));
         
     }
 
@@ -89,23 +95,27 @@ class ProductosController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Productos  $productos
+     * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Productos $producto)
+    public function update(Request $request, Producto $producto)
     {
         $request->validate([
             'nombre'=>'required',
             'precio'=>'required',
             'url'=>'required',
             'tipo'=>'required',
+            'etiqueta_id'=>'required',
         ]);
         
-        $producto->nombre = $request->nombre;
-        $producto->precio = $request->precio;
-        $producto->tipo = $request->tipo;
-        $producto->url = $request->url;
-        $producto->save();
+        Producto::where('id',$producto->id)->update($request->except(['_token','_method','btnagregar', 'etiqueta_id']));
+        $producto->etiquetas()->sync($request->etiqueta_id);
+
+        //$producto->nombre = $request->nombre;
+        //$producto->precio = $request->precio;
+        //$producto->tipo = $request->tipo;
+        //$producto->url = $request->url;
+        //$producto->save();
 
         return redirect('/productos');
     }
@@ -113,10 +123,10 @@ class ProductosController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Productos  $productos
+     * @param  \App\Models\Producto  $producto
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Productos $producto)
+    public function destroy(Producto $producto)
     {
        $producto->delete();
        return redirect('/productos');

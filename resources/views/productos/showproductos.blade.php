@@ -1,8 +1,8 @@
 <x-layout>
 <div class="banner-top">
         <div class="container">
-            <h3 >Productos</h3>
-            <h4><a href="inicio">Inicio</a><label>/</label>Bienvenida</h4>
+            <h3 >Producto</h3>
+            <h4><a href="inicio">Productos</a><label>/</label>Detalles</h4>
             <div class="clearfix"> </div>
         </div>
 </div>
@@ -27,7 +27,9 @@ tr:nth-child(even) {
 <table>
    <tr>
        <th>ID   </th>
-       <th>  Nombre</th>
+       <th>Usuario</th>
+       <th>Nombre</th>
+       <th>Imagen</th>
        <th>Precio</th>
        <th>Tipo</th>
        <th>Acciones</th>
@@ -36,7 +38,9 @@ tr:nth-child(even) {
    
     <tr>
         <td>{{ $producto->id }}</td>
+        <td>{{ $producto->user->name }}</td>
         <td>{{ $producto->nombre }}</td>
+        <td><img src="{{asset($producto->url)}}" width = "100" height = "100"> </td>
         <td>{{ $producto->precio }}</td>
         <td>{{ $producto->tipo }}</td>
         <td>

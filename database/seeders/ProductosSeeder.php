@@ -16,6 +16,7 @@ class ProductosSeeder extends Seeder
     public function run()
     {
         DB::table('productos')->insert([
+            'user_id' => '1',
             'nombre' => 'cacahuates',
             'precio' => '15',
             'tipo' => 'snacks',

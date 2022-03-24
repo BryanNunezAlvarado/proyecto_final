@@ -68,6 +68,16 @@
                     </select>
                     <br></br>
                 </div>
+                <div>
+                    Estado:<br>
+                    <select name="etiqueta_id[]" multiple >
+                        @foreach ($etiquetas as $etiqueta)
+                            <option value ="{{ $etiqueta->id }}" {{isset($producto) && array_search($etiqueta->id, $producto->etiquetas->pluck('id')->toArray()) !== false ?  ' selected' : '' }}>{{ $etiqueta->etiqueta }}</option>
+                        @endforeach
+                        
+                    </select>
+                    <br></br>
+                </div>
                 <input type="submit" value="Agregar" name="btnagregar">
                 <a >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
                 <a  href="./">Cancelar</a>

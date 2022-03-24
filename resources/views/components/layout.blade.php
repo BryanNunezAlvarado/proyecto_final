@@ -59,6 +59,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		</script>
 <!---//End-rate---->
 
+
 </head>
 <body>
     <a href="offer.html"><img src="{{asset('images/download.png')}}" class="img-head" alt=""></a>
@@ -80,6 +81,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
                                     {{ __('Log Out') }}
                                 </x-jet-dropdown-link>
                       </form>
+                      
                         
                     </ul>		
                 </div>

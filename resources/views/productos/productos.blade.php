@@ -27,20 +27,28 @@ tr:nth-child(even) {
 <table>
    <tr>
        <th>ID</th>
+       <th>Usuario</th>
        <th>Nombre</th>
        <th>Imagen</th>
        <th>Precio</th>
        <th>Tipo</th>
+       <th>Estado</th>
        <th>Acciones</th>
        
    </tr>
    @foreach($producto as $producto)
     <tr>
         <td>{{ $producto->id }}</td>
+        <td>{{ $producto->user->name }}</td>
         <td>{{ $producto->nombre }}</td>
         <td><img src="{{asset($producto->url)}}" width = "100" height = "100"> </td>
         <td>{{ $producto->precio }}</td>
         <td>{{ $producto->tipo }}</td>
+        <td>
+            @foreach ($producto->etiquetas as $etiqueta)
+              {{ $etiqueta->etiqueta }} <br>
+            @endforeach
+        </td>
         <td>
           <a href="productos/{{ $producto->id}}">Ver detalles</a><br>
           <a href="productos/{{ $producto->id}}/edit">Editar</a><br>
