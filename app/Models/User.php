@@ -10,6 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 
 class User extends Authenticatable
 {
@@ -67,5 +68,17 @@ class User extends Authenticatable
     public function codigo()
     {
         return $this->hasOne(Codigo::class);
+    }
+    //protected function name(): Attribute
+    //{
+        //return Attribute::make(
+           // get: fn ($value)=> strtoupper($value),
+       // );
+    //}
+    protected function name(): Attribute
+    {
+        return Attribute::make(
+            get: fn ($value)=> strtoupper($value),
+        );
     }
 }

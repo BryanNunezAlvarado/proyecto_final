@@ -50,7 +50,7 @@
 									
 																		
 											<a href="#" data-toggle="modproductoal" data-target="#myModal1" class="offer-img">
-												<div align="center"> <img src= {{ $producto->url }} " ></div>
+												<div align="center"> <img src= {{ $producto->url }} width = "100" height = "123" ></div>
 												<div class="offer"><p><span>Offer</span></p></div>
 											</a>
 											<div class="mid-1">
@@ -58,7 +58,7 @@
 													<h6><a href="single.html">{{ $producto->nombre }}</a></h6>							
 												</div>
 												<div class="mid-2">
-													<p > {{ $producto->precio }} </p>
+													<p >$ {{ $producto->precio }} </p>
 													<div class="block">
 														<div class="starbox small ghosting"> </div>
 													</div>
