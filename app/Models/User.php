@@ -75,10 +75,10 @@ class User extends Authenticatable
            // get: fn ($value)=> strtoupper($value),
        // );
     //}
-    protected function name(): Attribute
+    protected function nameEmail(): Attribute
     {
         return Attribute::make(
-            get: fn ($value)=> strtoupper($value),
+            get: fn () => ($this->name) ." =>" . " (". $this->email .")",
         );
     }
 }

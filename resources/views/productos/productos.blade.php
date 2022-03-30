@@ -40,7 +40,7 @@ tr:nth-child(even) {
    @foreach($producto as $producto)
     <tr>
         <td>{{ $producto->id }}</td>
-        <td>{{ $producto->user->name }}</td>
+        <td>{{ $producto->user->name_email }}</td>
         <td>
           {{$producto->user->codigo->codigo ?? 'sin codigo'}}
         </td>
