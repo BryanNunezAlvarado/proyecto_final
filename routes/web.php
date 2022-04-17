@@ -23,16 +23,21 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');
 
-Route::get('/bienvenida',function(){
-    return view('bienvenida');
+Route::middleware(['verified'])->group( function () {
+    Route::get('/bienvenida',function(){
+        return view('bienvenida');
+    });
+    Route::get('/contacto',function(){
+        return view('contacto');
+    });
+    Route::get('/inicio',function(){
+        $producto = DB::table('productos')->get();
+        return view('inicio',compact('producto'));
+    });
 });
-Route::get('/contacto',function(){
-    return view('contacto');
-});
-Route::get('/inicio',function(){
-    $producto = DB::table('productos')->get();
-    return view('inicio',compact('producto'));
-});
+
+Route::get('enviar-reporte',[ProductosController::class, 'enviarProductos']);
+
 
 
 //Route::get('/productos/editar/{producto}',function($producto = null){

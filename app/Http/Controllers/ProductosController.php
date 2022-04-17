@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Models\Etiqueta;
+use App\Mail\Reporte;
 use App\Models\Producto;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Mail;
 
 class ProductosController extends Controller
 {
@@ -131,5 +133,12 @@ class ProductosController extends Controller
     {
        $producto->delete();
        return redirect('/productos');
+    }
+
+    public function enviarProductos()
+    {
+        Mail::to(Auth::user()->email)->send(new Reporte());
+        return redirect()->back();
+
     }
 }

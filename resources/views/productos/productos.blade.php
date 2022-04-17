@@ -25,6 +25,7 @@ tr:nth-child(even) {
 </style>
 <br>
 <table>
+<a href="/enviar-reporte">Enviar Productos</a><br>
    <tr>
        <th>ID</th>
        <th>Usuario</th>
@@ -62,6 +63,7 @@ tr:nth-child(even) {
           @method('DELETE')
           <input type="submit" value="Borrar">
           </form>
+          
         </td>
         
     </tr>
