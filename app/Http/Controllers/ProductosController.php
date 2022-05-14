@@ -5,15 +5,17 @@ namespace App\Http\Controllers;
 use App\Models\Etiqueta;
 use App\Mail\Reporte;
 use App\Models\Producto;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Gate;
 
 class ProductosController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth');
+       // $this->middleware('auth');
     }
     
     /**
@@ -26,6 +28,7 @@ class ProductosController extends Controller
         //$producto = Producto::get();
         //$producto = Auth::user()->productos;
         $producto = Producto::with('etiquetas')->with('user.codigo')->get();
+        
        
         return view('productos.productos',compact('producto'));
     }
@@ -41,6 +44,7 @@ class ProductosController extends Controller
     {
         $etiquetas = Etiqueta::all();
         return view('productos.agregar_producto',compact('etiquetas'));
+        
     }
 
     /**
@@ -58,13 +62,14 @@ class ProductosController extends Controller
             'tipo'=>'required',
             'etiqueta_id'=>'required',
         ]);
+        	
+         
         $request->merge(['user_id'=>Auth::id()]);
         $producto = Producto::create($request->all());
         $producto->etiquetas()->attach($request->etiqueta_id);
         
         //$user = Auth::user();
         //$user->productos()->save($producto);
-
         return redirect('/productos');
     }
 
@@ -89,6 +94,8 @@ class ProductosController extends Controller
      */
     public function edit(Producto $producto)
     {
+         Gate::authorize('administra',$producto);
+
         $etiquetas = Etiqueta::all();
         return view('productos.agregar_producto',compact('producto', 'etiquetas'));
         
@@ -103,6 +110,7 @@ class ProductosController extends Controller
      */
     public function update(Request $request, Producto $producto)
     {
+        Gate::authorize('administra',$producto);
         $request->validate([
             'nombre'=>'required',
             'precio'=>'required',
@@ -131,6 +139,7 @@ class ProductosController extends Controller
      */
     public function destroy(Producto $producto)
     {
+        Gate::authorize('administra',$producto);
        $producto->delete();
        return redirect('/productos');
     }

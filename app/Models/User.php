@@ -81,4 +81,7 @@ class User extends Authenticatable implements MustVerifyEmail
             get: fn () => ($this->name) ." =>" . " (". $this->email .")",
         );
     }
+    public function archivos(){
+        return $this->hasMany(Archivo::class);
+    }
 }

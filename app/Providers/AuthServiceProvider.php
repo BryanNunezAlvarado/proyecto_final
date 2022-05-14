@@ -3,9 +3,12 @@
 namespace App\Providers;
 
 use App\Models\Team;
+use App\Models\User;
+use App\Models\Producto;
 use App\Policies\TeamPolicy;
+use Illuminate\Auth\Access\Response;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
-
+use Illuminate\Support\Facades\Gate;
 class AuthServiceProvider extends ServiceProvider
 {
     /**
@@ -26,6 +29,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('administra',function(User $user,Producto $producto){
+            return $user->id == $producto->user_id
+                ? Response::allow()
+                : Response::deny('Permiso denegado');
+        });
     }
 }

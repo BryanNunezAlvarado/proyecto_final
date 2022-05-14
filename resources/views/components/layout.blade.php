@@ -114,7 +114,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
                                 <li><a href="/contacto" class="hyper"><span>Contacto</span></a></li>
                                 <li><a href="../productos" class="hyper"><span>Productos</span></a></li>
                                 <li><a href="../productos/create" class="hyper"><span>Agregar Producto</span></a></li>
-                                
+                                <li><a href="/archivo_agregar" class="hyper"><span>Agregar Archivo</span></a></li>
                                 <!--<li><a href="edit" class="hyper"><span>Editar Producto</span></a></li>-->
                             </ul>
                         </div>

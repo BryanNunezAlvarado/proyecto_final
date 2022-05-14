@@ -78,10 +78,15 @@
                     </select>
                     <br></br>
                 </div>
+                
                 <input type="submit" value="Agregar" name="btnagregar">
                 <a >&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</a>
                 <a  href="./">Cancelar</a>
+
+                
             </form>
+           
+
         </div>
     </div>
 </div>

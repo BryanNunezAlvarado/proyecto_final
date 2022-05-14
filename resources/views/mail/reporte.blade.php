@@ -4,7 +4,7 @@
 
     @foreach($productos as $producto)
     
-    <li>{{ $producto->nombre  }} => ${{ $producto->precio }}</li>
+    <li>{{ $producto->nombre  }} ==> ${{ $producto->precio }}</li>
 
     @endforeach
     

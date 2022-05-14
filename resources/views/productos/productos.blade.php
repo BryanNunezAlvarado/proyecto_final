@@ -25,11 +25,14 @@ tr:nth-child(even) {
 </style>
 <br>
 <table>
-<a href="/enviar-reporte">Enviar Productos</a><br>
+<!-- <a href="/enviar-reporte">Enviar Productos</a><br> 
+<input type="submit" href="/enviar-reporte">Enviar Producto-->
+<form action="/enviar-reporte">
+        <input type="submit" value="Enviar Productos" />
+</form>
    <tr>
        <th>ID</th>
        <th>Usuario</th>
-       <th>Codigo usuario</th>
        <th>Nombre</th>
        <th>Imagen</th>
        <th>Precio</th>
@@ -42,9 +45,6 @@ tr:nth-child(even) {
     <tr>
         <td>{{ $producto->id }}</td>
         <td>{{ $producto->user->name_email }}</td>
-        <td>
-          {{$producto->user->codigo->codigo ?? 'sin codigo'}}
-        </td>
         <td>{{ $producto->nombre }}</td>
         <td><img src="{{asset($producto->url)}}" width = "100" height = "100"> </td>
         <td>{{ $producto->precio }}</td>

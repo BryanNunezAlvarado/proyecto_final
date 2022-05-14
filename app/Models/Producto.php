@@ -16,7 +16,7 @@ class Producto extends Model
     
     protected static function booted()
     {
-        static::addGlobalScope(new UsuarioScope);
+       // static::addGlobalScope(new UsuarioScope);
     }
 
     public function user()
