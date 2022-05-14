@@ -19,8 +19,8 @@ tr:nth-child(even) {
 <br>
 <div class="banner-top">
                 <div class="container">
-                    <h3 >Editar Producto</h3>
-                    <h4><a href="inicio">Inicio</a><label>/</label>Agregar Archivo</h4>
+                    <h3 >Archivos</h3>
+                    <h4><a href="inicio">Inicio</a><label>/</label>Archivos</h4>
                     <div class="clearfix"> </div>
                 </div>
 </div>

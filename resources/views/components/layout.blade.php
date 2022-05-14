@@ -62,6 +62,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 </head>
 <body>
+  
     <a href="offer.html"><img src="{{asset('images/download.png')}}" class="img-head" alt=""></a>
     <div class="header">
 
@@ -94,7 +95,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
                     </ul>	
                 </div>
             
-
+                @include('partials.mensaje')
                     <div class="nav-top">
                         <nav class="navbar navbar-default">
                         
@@ -122,6 +123,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
                         <div class="cart" >
                         
                             <span class="fa fa-shopping-cart my-cart-icon"><span class="badge badge-notify my-cart-badge"></span></span>
+                            
                         </div>
                         <div class="clearfix"></div>
                     </div>

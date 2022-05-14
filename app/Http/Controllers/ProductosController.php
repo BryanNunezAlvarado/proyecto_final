@@ -70,7 +70,7 @@ class ProductosController extends Controller
         
         //$user = Auth::user();
         //$user->productos()->save($producto);
-        return redirect('/productos');
+        return redirect('/productos')->with(['mensaje' => 'creacion correctamente']);
     }
 
     /**
@@ -127,8 +127,9 @@ class ProductosController extends Controller
         //$producto->tipo = $request->tipo;
         //$producto->url = $request->url;
         //$producto->save();
+       
 
-        return redirect('/productos');
+        return redirect('/productos')->with(['mensaje' => 'Editado correctamente']);
     }
 
     /**
@@ -141,13 +142,14 @@ class ProductosController extends Controller
     {
         Gate::authorize('administra',$producto);
        $producto->delete();
-       return redirect('/productos');
+       return redirect('/productos')->with(['mensaje' => 'Eliminado correctamente']);
     }
 
     public function enviarProductos()
     {
         Mail::to(Auth::user()->email)->send(new Reporte());
-        return redirect()->back();
+        return redirect()->back()->with(['mensaje' => 'Enviado correctamente']);
 
     }
+    
 }

@@ -26,7 +26,7 @@ class ArchivoController extends Controller
 
             }
         }
-        return redirect('archivo_agregar')->with('msg','Archivo(s) cargados con exito');
+        return redirect('archivo_agregar')->with(['mensaje' => 'Carga exitosa']);
     }
     public function descargar(Archivo $archivo)
     {
@@ -36,6 +36,6 @@ class ArchivoController extends Controller
     public function destroy(Archivo $archivo)
     {
        $archivo->delete();
-       return redirect('/archivo_agregar');
+       return redirect('/archivo_agregar')->with(['mensaje' => 'Eliminado correctamente']);
     }
 }

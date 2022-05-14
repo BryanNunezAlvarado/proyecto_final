@@ -30,6 +30,7 @@ tr:nth-child(even) {
 <form action="/enviar-reporte">
         <input type="submit" value="Enviar Productos" />
 </form>
+
    <tr>
        <th>ID</th>
        <th>Usuario</th>
